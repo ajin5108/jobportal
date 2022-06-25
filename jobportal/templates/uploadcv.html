@@ -1,0 +1,51 @@
+{% extends 'emphomepage.html' %}
+{% block body %}
+	<body class="img js-fullheight" style="">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+						<H2><B>UPLOAD YOUR RESUME</B> </H2><BR><BR>
+
+		      	<form action="/jreq" method="post" class="signin-form" enctype="multipart/form-data">
+					{% csrf_token %}
+
+		      		<div class="form-group">
+		      			<input type="file"   name="cv" required>
+		      		</div>
+
+		      			<input type="number"  placeholder="expected salary" name="exp_salary" required>
+
+
+
+					<div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">ADD</button>
+	            </div>
+	            <div class="form-group d-md-flex">
+	            	<div class="w-50">
+		            	<label class="checkbox-wrap checkbox-primary">
+
+
+									</label>
+
+	            </div>
+	          </form>
+
+
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	</body>
+{% endblock %}
+

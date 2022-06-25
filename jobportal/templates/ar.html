@@ -1,0 +1,29 @@
+{% extends 'adminhome.html' %}
+{% block body %}
+<body>
+
+<table class="table" align="center" border="1">
+<tr>
+    <th>company Name</th>
+    <th>company register number</th>
+    <th>company address</th>
+    <th>contact</th>
+    <th>website</th>
+</tr>
+    {% for i in ob %}
+    <tr>
+        <td>{{i.cname}}</td>
+        <td>{{i.cregnum}}</td>
+        <td>{{i.cadd}}</td>
+        <td>{{i.contact}}</td>
+        <td>{{i.website}}</td>
+        <td><a href="{% url 'accept' id=i.cid.id %}">accept</a></td>
+         <td><a href="{% url 'reject' id=i.cid.id %}">reject</a></td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+{% endblock %}

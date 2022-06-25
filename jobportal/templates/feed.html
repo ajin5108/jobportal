@@ -1,0 +1,27 @@
+{% extends 'adminhome.html' %}
+{% block body %}
+<body>
+
+<table class="table" align="center" border="1">
+<tr>
+    <th>company Name</th>
+    <th>your feedback</th>
+
+</tr>
+    {% for i in ob %}
+    <tr>
+        <td>{{i.company.cname}}</td>
+        <td>{{i.jt}}</td>
+
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+
+
+</table>
+</body>
+{% endblock %}

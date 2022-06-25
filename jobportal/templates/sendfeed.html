@@ -1,0 +1,17 @@
+{% extends 'index2.html' %}
+{% block body %}
+<body>
+
+ <form method="post" action="/sendfeed2">
+     {% csrf_token %}
+                    <div class="form-group">
+						<textarea rows="4" cols="50" class="form-control" placeholder="Send Feedback" name="feedback" required></textarea>
+		      		</div>
+                    <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">SEND</button>
+	                </div>
+
+     </form>
+
+</body>
+{% endblock %}

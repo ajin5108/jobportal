@@ -1,0 +1,39 @@
+{% extends 'emphomepage.html' %}
+{% block body %}
+
+<body>
+	<form action="/viewjobs" method="post" class="signin-form">
+					{% csrf_token %}
+		      		<div class="srh">
+		      			<input type="text" class="form-control" placeholder="search" name="search" >
+                        <button type="submit" class=" btn btn-primary ">search</button>
+		      		</div>
+        <br><br><br><br>
+	          </form>
+<table class="table" align="center" border="1">
+<tr>
+    <th>company Name</th>
+    <th>company address</th>
+    <th>contact</th>
+    <th>skills</th>
+    <th>discription</th>
+    <th>expiry date</th>
+
+</tr>
+    {% for i in ob %}
+    <tr>
+        <td>{{i.cid.cname}}</td>
+        <td>{{i.cid.cadd}}</td>
+        <td>{{i.cid.contact}}</td>
+        <td>{{i.skills}}</td>
+        <td>{{i.dis}}</td>
+        <td>{{i.dateto}}</td>
+        <td><a href="{% url 'uploadcv' id=i.cid.id %}">apply</a></td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+{% endblock %}

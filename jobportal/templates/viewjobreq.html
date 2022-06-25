@@ -1,0 +1,27 @@
+{% extends 'index2.html' %}
+{% block body %}
+<body>
+
+<table class="table" align="center" border="1">
+<tr>
+    <th> Name</th>
+    <th> number</th>
+    <th>Email address</th>
+    <th>expected salary</th>
+    <th>cv</th>
+</tr>
+    {% for i in ob %}
+    <tr>
+        <td>{{i.eid.fname}}&nbsp;{{i.eid.fname}}</td>
+        <td>{{i.eid.number}}</td>
+        <td>{{i.eid.email}}</td>
+        <td>{{i.expsalary}}</td>
+        <td><a href="{{i.cv.url}}"> RESUME</a></td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+{% endblock %}
